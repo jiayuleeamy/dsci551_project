@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+    <link rel="stylesheet" href="{% static 'buttom.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RESTAURANT REVIEW</title>
+</head>
+<body>
+    {% if result %}
+    {% for business in result %}
+    <h2>Review list of {{business.name}}</h2>
+    <table id=table-2>
+        <tr>
+            <th>Name</th><th>Address</th><th>City</th><th>State</th><th>Stars</th><th>Hours</th><th>Categories</th>
+        </tr>
+        <tr>
+            <td>{{business.name}}</td><td>{{business.address}}</td><td>{{business.city}}</td><td>{{business.state}}</td><td>{{business.stars}}</td><td>{{business.hours}}</td><td>{{business.categories}}</td>
+        </tr>
+    {% endfor %}
+    {% endif %}
+    <table id=table-2>
+    <tr>
+        <th>Date</th><th>Review</th><th>Stars</th>
+    </tr>
+    {% if businessdetail %}
+    {% for review in businessdetail %}
+    <tr>
+        <td>{{review.date}}</td><td>{{review.text}}</td><td>{{review.stars}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <h1 style="text-align:center">THERE'S NO REVIEW OF THIS RESTAURANT!</h1>
+    {% endif %}
+    <br>
+    <br>
+    <div>
+        <button class="button button3"><a href="{% url 'home' %}">HOME</a></button>
+    </div>
+
+</body>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'table.css' %}">
+    <link rel="stylesheet" href="{% static 'buttom.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RESTAURANT LIST</title>
+</head>
+<body>
+    <div>
+    <form method="POST" action="search/">
+    {% csrf_token %}
+    NAME : <br>
+    <input type="text" name="r_name" />
+    <br>
+    CATEGORY : <br>
+    <input type="text" name="r_cate" />
+    <br>
+    STARS : <br>
+    <input type="number" name="r_star" />
+    <br>
+    <input type="checkbox" id="option1" name="option1" value="1">
+    <label for="option1"> Credit Card</label><br>
+    <input type="checkbox" id="option2" name="option2" value="1">
+    <label for="option2"> Pet Allowed</label><br>
+    <input type="checkbox" id="option3" name="option3" value="1">
+    <label for="option3"> Good For Kids</label><br>
+    <input type="checkbox" id="option4" name="option4" value="1">
+    <label for="option4"> Take Out</label><br>
+    <input type="checkbox" id="option5" name="option5" value="1">
+    <label for="option5"> Outdoor Seating</label><br>
+    <br>
+    <button class="button button3">SEARCH</button>
+    </form>
+    </div>
+    <table id=table-2>
+    {% if businesslist %}
+    <tr>
+        <th>Name</th><th>Address</th><th>State</th><th>Stars</th><th>Hours</th><th>Categories</th>
+    </tr>
+    {% for business in businesslist %}
+    <tr>
+        <td><a href="{% url 'business_detail' business.id %}">{{business.name}}</a></td><td>{{business.address}}</td><td>{{business.state}}</td><td>{{business.stars}}</td><td>{{business.hours}}</td><td>{{business.categories}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <h1 style="text-align:center">THERE'S NO RESTAURANT MEET THE CONDITION!</h1>
+    {% endif %}
+    <br>
+    <br>
+    <div>
+        <button class="button button3"><a href="{% url 'home' %}">HOME</a></button>
+    </div>
+</body>
+</html>

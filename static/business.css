@@ -1,0 +1,37 @@
+<style>
+    .table9_6 table {
+        width:100%;
+        margin:15px 0
+    }
+    .table9_6 th {
+        background-color:#96C7ED;
+        background:-o-linear-gradient(90deg, #96C7ED, #c3dff4);
+        background:-moz-linear-gradient( center top, #96C7ED 5%, #c3dff4 100% );
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #96C7ED), color-stop(1, #c3dff4) );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#96C7ED', endColorstr='#c3dff4');
+        color:#000000
+    }
+    .table9_6,.table9_6 th,.table9_6 td
+    {
+        font-size:0.95em;
+        text-align:center;
+        padding:4px;
+        border:1px solid #73b4e7;
+        border-collapse:collapse
+    }
+    .table9_6 td {
+    
+        border:1px solid #c3dff4;
+        border-collapse:collapse
+    }
+    .table9_6 tr:nth-child(odd){
+        background-color:#dcecf9;
+        background:-o-linear-gradient(90deg, #dcecf9, #f8fbfd);
+        background:-moz-linear-gradient( center top, #dcecf9 5%, #f8fbfd 100% );
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dcecf9), color-stop(1, #f8fbfd) );
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dcecf9', endColorstr='#f8fbfd');
+    }
+    .table9_6 tr:nth-child(even){
+        background-color:#fdfdfd;
+    }
+</style>
